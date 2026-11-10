@@ -1,4 +1,4 @@
-# Credit Risk Assessment
+# Credit Risk Predictor
 
 Credit Risk Assessment is a machine-learning web application that estimates the probability of loan default from an applicant's profile and requested loan details. It presents both default and repayment probabilities, then compares the estimated default risk with a model decision threshold to label the application **High Risk** or **Low Risk**.
 
