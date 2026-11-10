@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Assess loan applications with an easy-to-use credit risk prediction tool."
+    />
+    <title>Credence — Credit Risk Assessment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="/" aria-label="Credence home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M7 23.5 13.2 17l4.3 4.1L26 11" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M19.5 11H26v6.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span>credence<span class="brand-period">.</span></span>
+        </a>
+
+        <div class="sidebar-copy">
+          <span class="eyebrow">CREDIT INTELLIGENCE</span>
+          <h1>Make every<br />decision count.</h1>
+          <p>Understand the risk behind every application with a clear, data-driven assessment.</p>
+        </div>
+
+        <div class="sidebar-illustration" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit orbit-three"></div>
+          <div class="illustration-core">
+            <svg viewBox="0 0 64 64" fill="none">
+              <path d="M32 7 51 15v14c0 12.2-8.1 22.9-19 27-10.9-4.1-19-14.8-19-27V15L32 7Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" />
+              <path d="m23 32 6 6 13-14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <span class="float-dot dot-one"></span>
+          <span class="float-dot dot-two"></span>
+          <span class="float-dot dot-three"></span>
+        </div>
+
+        <div class="sidebar-footer">
+          <span class="live-indicator"></span>
+          <span>Assessment engine ready</span>
+          <span class="sidebar-version">v1.0</span>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="breadcrumb">Workspace <span>/</span> New assessment</p>
+            <p class="topbar-title">Credit risk assessment</p>
+          </div>
+          <div class="secure-badge">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <rect x="4" y="8.5" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.5" />
+              <path d="M6.5 8.5V6a3.5 3.5 0 1 1 7 0v2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            Private assessment
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="intro">
+            <div>
+              <div class="intro-kicker"><span class="kicker-line"></span> SMARTER LENDING STARTS HERE</div>
+              <h2>Assess an application</h2>
+              <p>Enter the applicant and loan details below to generate a risk estimate.</p>
+            </div>
+            <div class="step-indicator"><span>01</span><i></i><span class="step-muted">02</span><small>Application <b>·</b> Result</small></div>
+          </section>
+
+          <div class="content-grid">
+            <form id="loan-form" class="form-card">
+              <div class="form-card-header">
+                <div class="form-icon">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 19.5V6.8A2.8 2.8 0 0 1 6.8 4h10.4A2.8 2.8 0 0 1 20 6.8v10.4a2.8 2.8 0 0 1-2.8 2.8H4Z" stroke="currentColor" stroke-width="1.6" />
+                    <path d="M8 9h8M8 12.5h8M8 16h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Applicant information</h3>
+                  <p>All fields are required for an accurate estimate.</p>
+                </div>
+                <span class="required-note"><span>*</span> Required</span>
+              </div>
+
+              <section class="form-section">
+                <div class="section-heading">
+                  <span class="section-number">01</span>
+                  <div><h4>Personal details</h4><p>Basic profile and credit history</p></div>
+                </div>
+                <div class="field-grid">
+                  <label class="field">
+                    <span>Age <em>*</em></span>
+                    <div class="input-wrap">
+                      <input name="person_age" type="number" min="18" max="100" value="30" required />
+                      <span class="input-suffix">years</span>
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Annual income <em>*</em></span>
+                    <div class="input-wrap">
+                      <span class="input-prefix">$</span>
+                      <input name="person_income" type="number" min="1" step="any" inputmode="decimal" placeholder="e.g. 75000" required />
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Home ownership <em>*</em></span>
+                    <div class="select-wrap">
+                      <select name="person_home_ownership" required>
+                        <option value="RENT">Rent</option>
+                        <option value="MORTGAGE">Mortgage</option>
+                        <option value="OWN">Own</option>
+                        <option value="OTHER">Other</option>
+                      </select>
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Employment length <em>*</em></span>
+                    <div class="input-wrap">
+                      <input name="person_emp_length" type="number" min="0" max="60" step="0.5" value="5" required />
+                      <span class="input-suffix">years</span>
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Credit history length <em>*</em></span>
+                    <div class="input-wrap">
+                      <input name="cb_person_cred_hist_length" type="number" min="0" max="80" value="5" required />
+                      <span class="input-suffix">years</span>
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Previous default on file <em>*</em></span>
+                    <div class="select-wrap">
+                      <select name="cb_person_default_on_file" required>
+                        <option value="N">No</option>
+                        <option value="Y">Yes</option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+              </section>
+
+              <div class="section-divider"></div>
+
+              <section class="form-section">
+                <div class="section-heading">
+                  <span class="section-number">02</span>
+                  <div><h4>Loan details</h4><p>Requested amount and loan profile</p></div>
+                </div>
+                <div class="field-grid">
+                  <label class="field">
+                    <span>Loan amount <em>*</em></span>
+                    <div class="input-wrap">
+                      <span class="input-prefix">$</span>
+                      <input name="loan_amnt" type="number" min="1" step="any" inputmode="decimal" placeholder="e.g. 12000" required />
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Interest rate <em>*</em></span>
+                    <div class="input-wrap">
+                      <input name="loan_int_rate" type="number" min="0" max="100" step="0.01" value="11.5" required />
+                      <span class="input-suffix">%</span>
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Loan purpose <em>*</em></span>
+                    <div class="select-wrap">
+                      <select name="loan_intent" required>
+                        <option value="PERSONAL">Personal</option>
+                        <option value="EDUCATION">Education</option>
+                        <option value="MEDICAL">Medical</option>
+                        <option value="VENTURE">Business venture</option>
+                        <option value="HOMEIMPROVEMENT">Home improvement</option>
+                        <option value="DEBTCONSOLIDATION">Debt consolidation</option>
+                      </select>
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Loan grade <em>*</em></span>
+                    <div class="select-wrap">
+                      <select name="loan_grade" required>
+                        <option value="A">A — Lowest risk</option>
+                        <option value="B">B</option>
+                        <option value="C" selected>C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G — Highest risk</option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+                <div class="ratio-note">
+                  <span class="ratio-note-icon">i</span>
+                  <span>Loan-to-income ratio is calculated automatically from the loan amount and annual income.</span>
+                  <strong id="ratio-preview">16.0%</strong>
+                </div>
+              </section>
+
+              <div id="form-error" class="form-error" role="alert" hidden></div>
+              <div class="form-actions">
+                <p><span class="lock-icon">⌑</span> Your information is only used to generate this estimate.</p>
+                <button id="submit-button" class="submit-button" type="submit">
+                  <span class="button-label">Assess application</span>
+                  <svg class="button-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span class="button-spinner" aria-hidden="true"></span>
+                </button>
+              </div>
+            </form>
+
+            <aside class="results-column">
+              <section id="result-card" class="result-card" aria-live="polite">
+                <div class="result-topline">
+                  <span class="result-label">RISK ASSESSMENT</span>
+                  <span id="result-status" class="result-status">AWAITING INPUT</span>
+                </div>
+                <div id="empty-result" class="empty-result">
+                  <div class="empty-orbit">
+                    <div class="empty-orbit-inner">
+                      <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                        <path d="M22 5 35 10.5v9.7c0 8.4-5.5 15.8-13 18.6-7.5-2.8-13-10.2-13-18.6v-9.7L22 5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                        <path d="M17 22h10M22 17v10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h3>Your result will appear here</h3>
+                  <p>Complete the application details and run an assessment to see the estimated risk.</p>
+                  <div class="empty-meta"><span></span> Model ready for assessment</div>
+                </div>
+
+                <div id="result-content" class="result-content" hidden>
+                  <div class="risk-gauge">
+                    <svg viewBox="0 0 180 110" class="gauge-svg" aria-hidden="true">
+                      <path class="gauge-track" d="M20 95 A70 70 0 0 1 160 95" />
+                      <path id="gauge-progress" class="gauge-progress" d="M20 95 A70 70 0 0 1 160 95" />
+                    </svg>
+                    <div class="gauge-value"><strong id="probability-value">0%</strong><span>estimated repayment likelihood</span></div>
+                  </div>
+                  <div class="result-metrics">
+                    <span>Estimated default risk</span>
+                    <strong id="default-value">—</strong>
+                  </div>
+                  <div id="risk-pill" class="risk-pill">
+                    <span class="risk-dot"></span>
+                    <span id="risk-result">—</span>
+                  </div>
+                  <p id="result-summary" class="result-summary"></p>
+                  <div class="result-divider"></div>
+                  <div class="threshold-row">
+                    <span>Decision threshold</span>
+                    <strong id="threshold-value">—</strong>
+                  </div>
+                  <div class="threshold-track" aria-label="Applicant default probability compared with the model's decision threshold">
+                    <span id="threshold-marker" class="threshold-marker" title="Fixed model decision threshold"></span>
+                    <span id="probability-marker" class="probability-marker" title="Applicant default probability"></span>
+                  </div>
+                  <div class="threshold-axis" aria-hidden="true">
+                    <span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span>
+                  </div>
+                  <div class="threshold-caption"><span>Default probability: lower</span><span>higher</span></div>
+                  <div class="threshold-legend">
+                    <span><i class="legend-threshold"></i> Decision cutoff (fixed)</span>
+                    <span><i class="legend-probability"></i> This application</span>
+                  </div>
+                </div>
+              </section>
+
+              <section class="how-card">
+                <div class="how-icon">
+                  <svg viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8.25" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M11 10v5M11 7.25h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h4>How to read this</h4>
+                  <p>Repayment likelihood is the complement of estimated default risk. The fixed cutoff is used to classify risk; this estimate is not a lending decision.</p>
+                </div>
+              </section>
+              <p class="disclaimer">This tool provides an estimate only and should not be used as the sole basis for a lending decision.</p>
+            </aside>
+          </div>
+
+          <footer class="page-footer">
+            <span>Credence Credit Intelligence</span>
+            <span>Built for clearer lending decisions</span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
